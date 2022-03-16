@@ -1,0 +1,53 @@
+{
+    "name": "youngoldman/everlyticpackage",
+    "description": "Send player details to Everlytic Mail system",
+    "keywords": [
+        "youngoldman",
+        "everlyticpackage"
+    ],
+    "homepage": "https://github.com/youngoldman/everlyticpackage",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Young Oldman",
+            "email": "michael@giantprocurement.guru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Youngoldman\\Everlyticpackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Youngoldman\\Everlyticpackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Youngoldman\\Everlyticpackage\\EverlyticpackageServiceProvider"
+            ],
+            "aliases": {
+                "Everlyticpackage": "Youngoldman\\Everlyticpackage\\EverlyticpackageFacade"
+            }
+        }
+    }
+}
